@@ -10,13 +10,15 @@ services:
       - OPENAI_API_KEY=$OPENAI_API_KEY
       - GOOGLE_API_KEY=$GOOGLE_API_KEY
       - CODE=$CODE
-      - BASE_URL=$BASE_URL
+      - BASE_URL=http://host.docker.internal:8080
       - OPENAI_ORG_ID=$OPENAI_ORG_ID
       - HIDE_USER_API_KEY=$HIDE_USER_API_KEY
       - DISABLE_GPT4=$DISABLE_GPT4
       - ENABLE_BALANCE_QUERY=$ENABLE_BALANCE_QUERY
       - DISABLE_FAST_LINK=$DISABLE_FAST_LINK
       - OPENAI_SB=$OPENAI_SB
+    depends_on:
+        -   copilot-gpt4-service
 
   chatgpt-next-web-proxy:
     profiles: [ "proxy" ]
@@ -36,3 +38,13 @@ services:
       - ENABLE_BALANCE_QUERY=$ENABLE_BALANCE_QUERY
       - DISABLE_FAST_LINK=$DISABLE_FAST_LINK
       - OPENAI_SB=$OPENAI_SB
+  copilot-gpt4-service:
+    build:
+      context: copilot-gpt4-service
+      dockerfile: Dockerfile
+    environment:
+      - HOST=0.0.0.0
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+    container_name: copilot-gpt4-service
