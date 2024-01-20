@@ -36,7 +36,7 @@ WORKDIR /app
 RUN apk add proxychains-ng
 
 ENV PROXY_URL=""
-ENV OPENAI_API_KEY="http://localhost:8000"
+ENV OPENAI_API_KEY="http://localhost:8080"
 ENV GOOGLE_API_KEY=""
 ENV CODE="helloworld"
 FROM ubuntu
