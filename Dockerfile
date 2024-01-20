@@ -1,7 +1,7 @@
 FROM golang AS build
 WORKDIR /app
 COPY copilot-gpt4-service/copilot-gpt4-service .
-RUN CGO_ENABLED=1 GOOS=linux GOARCH=arm64 go build -o copilot-gpt4-service .
+RUN CGO_ENABLED=1 GOOS=linux  go build -o copilot-gpt4-service .
 
 FROM node:18-alpine AS base
 
