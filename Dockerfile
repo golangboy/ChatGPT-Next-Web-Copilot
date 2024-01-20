@@ -36,10 +36,9 @@ WORKDIR /app
 RUN apk add proxychains-ng
 
 ENV PROXY_URL=""
-ENV OPENAI_API_KEY="http://localhost:8080"
+ENV OPENAI_API_KEY=""
 ENV GOOGLE_API_KEY=""
 ENV CODE="helloworld"
-ENV COPILOT_TOKEN=""
 FROM ubuntu
 RUN apt update
 RUN apt install -y curl
