@@ -1,0 +1,13 @@
+.vscode
+
+cache.sqlite3
+/db
+/logs
+
+# Environments
+config.env
+.env
+.venv
+env/
+venv/
+ENV/
