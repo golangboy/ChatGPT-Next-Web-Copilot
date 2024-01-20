@@ -7,4 +7,10 @@ NextChat (ChatGPT Next Web) with Copilot
 export OPENAI_API_KEY=your_copilot_token
 docker-compose up -d chatgpt-next-web
 ```
-then, open http://localhost:8080
+or
+```shell
+export OPENAI_API_KEY=your_copilot_token
+docker build -t test . 
+docker run --name tt -p 3000:3000 -td test
+```
+then, open http://localhost:3000
