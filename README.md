@@ -1,11 +1,9 @@
-# TODO
+# What
 
 NextChat (ChatGPT Next Web) with Copilot
 
-# How to run
+# Get Start
 ```shell
-export OPENAI_API_KEY=your_copilot_token
-docker build -t test . 
-docker run --name tt -p 3000:3000 -td test
+docker run -e OPENAI_API_KEY=your_copilot_token -p 3000:3000 -itd golangboyme/gpt-with-copilot
 ```
-then, open http://localhost:3000
+> http://localhost:3000
